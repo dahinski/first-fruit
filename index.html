@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some title</title>
+    <style>
+        body {
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fruit-list {
+            width: 500px;
+            display: flex;
+            justify-content: space-between;
+            margin-right: 15px;
+        }
+
+        .fruit-item {
+            border-bottom: 1px solid black;
+        }
+
+        .fruit-item:hover {
+            color: brown;
+            cursor: pointer;
+            border-bottom: 1px solid brown;
+        }
+
+        .fruit-button {
+            color: white;
+            margin-top: 15px;
+            padding: 15px 30px;
+            background-color: brown;
+            border: 3px solid black;
+            border-radius: 15px;
+            transition: .5s;
+        }
+
+        .fruit-button:hover {
+            cursor: pointer;
+            background-color: green;
+            padding: 15px 50px;
+            transition: .5s;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://plus.unsplash.com/premium_photo-1671379086168-a5d018d583cf?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fruit" width="300px">
+    <h1>Choose the fruit you like most:</h1>
+    <ul class="fruit-list">
+        <li class="fruit-item">Apple</li>
+        <li class="fruit-item">Banana</li>
+        <li class="fruit-item">Orange</li>
+        <li class="fruit-item">Another</li>
+    </ul>
+    <button class="fruit-button">
+        Click me
+    </button>
+</body>
+</html>
