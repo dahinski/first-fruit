@@ -49,42 +49,42 @@
     </style>
 </head>
 <script type="text/javascript">
-        // Duration in milliseconds to wait while the Kameleoon application file is loaded
-        var kameleoonLoadingTimeout = 1000;
-    
-        window.kameleoonQueue = window.kameleoonQueue || [];
-        window.kameleoonStartLoadTime = new Date().getTime();
-        if (! document.getElementById("kameleoonLoadingStyleSheet") && ! window.kameleoonDisplayPageTimeOut)
+    // Duration in milliseconds to wait while the Kameleoon application file is loaded
+    var kameleoonLoadingTimeout = 1000;
+
+    window.kameleoonQueue = window.kameleoonQueue || [];
+    window.kameleoonStartLoadTime = new Date().getTime();
+    if (! document.getElementById("kameleoonLoadingStyleSheet") && ! window.kameleoonDisplayPageTimeOut)
+    {
+        var kameleoonS = document.getElementsByTagName("script")[0];
+        var kameleoonCc = "* { visibility: hidden !important; background-image: none !important; }";
+        var kameleoonStn = document.createElement("style");
+        kameleoonStn.type = "text/css";
+        kameleoonStn.id = "kameleoonLoadingStyleSheet";
+        if (kameleoonStn.styleSheet)
         {
-            var kameleoonS = document.getElementsByTagName("script")[0];
-            var kameleoonCc = "* { visibility: hidden !important; background-image: none !important; }";
-            var kameleoonStn = document.createElement("style");
-            kameleoonStn.type = "text/css";
-            kameleoonStn.id = "kameleoonLoadingStyleSheet";
-            if (kameleoonStn.styleSheet)
-            {
-                kameleoonStn.styleSheet.cssText = kameleoonCc;
-            }
-            else
-            {
-                kameleoonStn.appendChild(document.createTextNode(kameleoonCc));
-            }
-            kameleoonS.parentNode.insertBefore(kameleoonStn, kameleoonS);
-            window.kameleoonDisplayPage = function(fromEngine)
-            {
-                if (!fromEngine)
-                {
-                    window.kameleoonTimeout = true;
-                }
-                if (kameleoonStn.parentNode)
-                {
-                    kameleoonStn.parentNode.removeChild(kameleoonStn);
-                }
-            };
-            window.kameleoonDisplayPageTimeOut = window.setTimeout(window.kameleoonDisplayPage, kameleoonLoadingTimeout);
+            kameleoonStn.styleSheet.cssText = kameleoonCc;
         }
-    </script>
-    <script type="text/javascript" src="//lz8yn9hpso.kameleoon.io/kameleoon.js" async="true" fetchpriority="high"></script>
+        else
+        {
+            kameleoonStn.appendChild(document.createTextNode(kameleoonCc));
+        }
+        kameleoonS.parentNode.insertBefore(kameleoonStn, kameleoonS);
+        window.kameleoonDisplayPage = function(fromEngine)
+        {
+            if (!fromEngine)
+            {
+                window.kameleoonTimeout = true;
+            }
+            if (kameleoonStn.parentNode)
+            {
+                kameleoonStn.parentNode.removeChild(kameleoonStn);
+            }
+        };
+        window.kameleoonDisplayPageTimeOut = window.setTimeout(window.kameleoonDisplayPage, kameleoonLoadingTimeout);
+    }
+</script>
+<script type="text/javascript" src="//ets39dizqd.kameleoon.io/engine.js" async="true" fetchpriority="high"></script>
 <body>
     <img src="https://plus.unsplash.com/premium_photo-1671379086168-a5d018d583cf?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fruit" width="300px">
     <h1>Choose the fruit you like most:</h1>
